@@ -118,3 +118,53 @@ while a <= n:
 ```
 ***
 ### 1.3 遍历数值的集合
+&emsp;我们已经看到了如何遍历整数。是否有可能去遍历其他类型的值呢？当然可以：我们可以使用for循环，去遍历几乎所有储存值的容器。range()函数构建了一个包含所有值的列表，甚至超过了我们应该去循环处理的。但是，我们可以传入一个通过其他方式构建的列表。
+<br>
+***
+&emsp;实例1.3.1: 来看看这个程序：
+<br>
+```python
+days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+for day in days:
+    print(day)
+```
+&emsp;这个程序将打印一周中的每一天。
+<br>
+***
+&emsp;如果你遍历一个set，循环体中的程序绝对只会对set中的值执行一次；但是，执行的顺序是随机的。
+<br>
+&emsp;实例1.3.2: 如果我们稍微改动一下上面的程序，就像下面这样：
+```python
+days = set(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'])
+for day in days:
+    print(day)
+```
+&emsp;我们能得到以奇怪顺序排列的输出结果：
+<br>
+Monday<br>
+Tuesday<br>
+Friday<br>
+Wednesday<br>
+Thursday<br>
+Sunday<br>
+Saturday<br>
+<br>
+***
+&emsp;遍历一个字典意味着遍历他的一组“键”（关键字）。还有就是，“键”的处理顺序也是随机的。
+<br>
+&emsp;实例1.3.3: 看看下面这个程序：
+```python
+days = {'mon': 'Monday', 'tue': 'Tuesday', 'wed': 'Wednesday', 'thu': 'Thursday', 'fri': 'Friday', 'sat': 'Saturday', 'sun': 'Sunday'}
+    for day in days:
+        print(day, 'stands for', days[day]) 
+```
+&emsp;输出结果如下: 
+<br>
+wed stands for Wednesday<br>
+sun stands for Sunday<br>
+fri stands for Friday<br>
+tue stands for Tuesday<br>
+mon stands for Monday<br>
+thu stands for Thursday<br>
+sat stands for Saturday<br>
+***
