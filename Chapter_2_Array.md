@@ -4,3 +4,23 @@
 <br>
 
 ***
+### 2.1 创建一个数组
+&emsp;我们想去创建一个包含三种商品的购物清单。它就像下面这样被创建：
+<br>
+```python
+shopping = ['bread', 'butter', 'cheese']
+```
+&emsp;(在这里，“shopping”是数组的名字，在数组中的每一种商品都被“,”所分隔开)。数组中的每样物品被叫做元素(element)。数组可以储存许多元素（假设我们有足够的内存）。注意，数组／python中的list也可以是空的：
+<br>
+```python
+shopping = []
+```
+&emsp;如果计划去记录1整年，365天的气温，我们可以预先创造一个储存数据的容器。数组可以像下面这样创建：
+<br>
+```python
+temperatures = [0] * 365
+print(temperatures)
+```
+&emsp;(在这里，我们创建的数组包含了365个0)
+<br>
+***
