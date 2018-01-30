@@ -29,17 +29,63 @@ print(temperatures)
 <br>
 ***
 ### 2.3 修改数组的值
-我们也可以改变数组元素的值， 每一个数组元素都可以被单独赋值。例如， 我们想记录第42天的气温， 这一天的气温是25摄氏度。我们可以通过一次简单的赋值来完成它：
+&emsp;我们也可以改变数组元素的值， 每一个数组元素都可以被单独赋值。例如， 我们想记录第42天的气温， 这一天的气温是25摄氏度。我们可以通过一次简单的赋值来完成它：
 <br>
 ```python
 temperatures[42] = 25
 ```
-如果我们要在购物列表中添加更多的产品， 可以像下面这样添加：
+&emsp;如果我们要在购物列表中添加更多的产品， 可以像下面这样添加：
 <br>
 ```python
 shopping += ['eggs']
 print(shopping)
 ```
 元素的索引值也将自动添加（在这里， ‘eggs’的索引值是3）。
+<br>
+***
+### 2.4 遍历一个数组
+&emsp;我们经常需要去遍历一个数组的所有元素；或许是计算某个特定元素的数量。已知某个数组包含N个元素， 我们可以通过检查索引值来遍历数组， 索引值是从0到N-1。我们也可以通过len（）函数去获取数组的长度。例如， 我们可以快速计算购物列表中元素的数量， 就像下面这样： 
+<br>
+```python
+N = len(shopping)
+```
+&emsp;我们来构造一个函数， 它可以计算气温在零下的日子的数量。
+<br>
+```python
+temperatures = [5, 17, -16, -8, -7, 25, 14]
+
+def negative(temperatures):
+    N = len(temperatures)
+    days = 0
+    for i in range(N):
+        if temperatures[i] < 0:
+            days += 1
+
+    return days
+
+print(negative(temperatures))
+```
+&emsp;与其遍历索引值， 我们可以直接遍历数组的元素。 如果要这样做， 我们可以这样简单的写：
+<br>
+```python
+for item in array:
+    ...
+```
+让我们来简写上面的程序： 
+<br>
+```python
+temperatures = [5, 17, -16, -8, -7, 25, 14]
+
+def negative(temperatures):
+    days = 0
+    for t in temperatures:
+        if t < 0:
+           days += 1
+
+    return days
+
+print(negative(temperatures))
+```
+在上面的程序中， 数组中的数字如果小于0， days就会增加1。
 <br>
 ***
