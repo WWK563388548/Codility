@@ -89,3 +89,53 @@ print(negative(temperatures))
 在上面的程序中， 数组中的数字如果小于0， days就会增加1。
 <br>
 ***
+### 2.5 基础数组操作
+这里有一些操纵数组的基础操作非常有用。首先就是得到数组长度的操作：
+<br>
+```python
+print(len([1, 2, 3]) === 3);
+```
+重复数组操作：
+<br>
+```python
+tempArray = [0, 1, 3] * 365
+print(tempArray)
+```
+连接两个数组的操作：
+<br>
+```python
+anotherTempArray = [1, 2, 3] + [4, 5, 6]
+print(anotherTempArray)
+anotherTempArray = [1, 2, 3] + [4, 5, 6]
+```
+这个操作可以将两个数组连接成一个数组。
+<br>
+以及，成员操作:
+<br>
+```python
+tempArrayAgain = "butter" in ["bread", "butter", "cheese"]
+print(tempArrayAgain)
+```
+这个操作可以检查一个特定的元素是否在某个数组中存在。
+<br>
+### 2.6 练习
+问题：给定数组A由N个整数组成，请返回这个数组的倒序（数组A的颠倒形态）。
+<br>
+解答：我们可以遍历数组的前半部分，同时将前半部分的元素与后半部分数组中元素做交换。
+<br>
+```python
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+def reverse(A):
+    N = len(A)
+    for i in range(N // 2):
+        k = N - i - 1
+        A[i], A[k] = A[k], A[i]
+    return A
+
+print(reverse(arr))
+```
+Python提供了许多内建函数和方法（以及做好的函数和方法，允许人们直接调用）。这里其实已经有一个内建函数reverse()可以解决这个练习的问题了。使用这个方法，数组A可以被轻松颠倒，就像下面这样：
+<br>
+```python
+A.reverse()
+```
